@@ -5,3 +5,4 @@ This is the material (code and presentation slide decks) that correspond to the 
 ### Resources 
 * Purchase paperback: https://amzn.to/3zA7EaS
 * Purchase e-book: https://amzn.to/3q7YLC0
+* YouTube Pre-Recordings: [Playlist](https://www.youtube.com/playlist?list=PLVFrD1dmDdvdv7trr5j9ir7qrFK5K80X0)
