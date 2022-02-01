@@ -61,7 +61,7 @@ puts File.open('conor_hoekstra_solutions.rb')
          .each_line
          .each_with_index
          .select { |line, i| line.include?('puts') }
-         .collect { |line, i| i.to_s.ljust(4, ' ') + line.gsub(' ','-') }
+         .collect { |line, i| i.to_s.ljust(4, ' ') + line.gsub(' ', '-') }
 
 # Day 3 Self Study
 
