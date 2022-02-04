@@ -13,12 +13,11 @@ lambda do
   answer = rand(1..high)
   loop do
     guess = gets.to_i
-    case
-    when guess < answer then puts "Too low"
-    when guess > answer then puts "Too high"
-    else
-      puts "Right on"
-      break
-    end
+    puts case
+      when guess < answer then "Too low"
+      when guess > answer then "Too high"
+      else break
+      end
   end
+  puts "Right on"
 end.()
