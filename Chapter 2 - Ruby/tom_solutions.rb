@@ -14,10 +14,8 @@ lambda do
   loop do
     guess = gets.to_i
     case
-    when guess < answer
-      puts "Too low"
-    when guess > answer
-      puts "Too high"
+    when guess < answer then puts "Too low"
+    when guess > answer then puts "Too high"
     else
       puts "Right on"
       break
