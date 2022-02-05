@@ -91,3 +91,55 @@ lambda do
     end
   end
 end.()
+
+
+puts
+puts "# Day 3"
+
+# Csv
+module ActsAsCsv
+  def self.included(base)
+    base.extend ClassMethods
+  end
+
+  module ClassMethods
+    def acts_as_csv
+      include InstanceMethods
+    end
+  end
+
+  module InstanceMethods
+    attr_accessor :headers, :csv_contents
+
+    def initialize(headers, csv_contents)
+      @headers = headers
+      @csv_contents = csv_contents
+    end
+
+    def each
+      @csv_contents.each do |values|
+        yield CsvRow.new(Hash[@headers.zip(values)])
+      end
+    end
+  end
+end
+
+class CsvRow
+  def initialize(hash)
+    @hash = hash
+  end
+
+  def method_missing(name)
+    @hash[name.to_s]
+  end
+end
+
+class RubyCsv
+  include ActsAsCsv
+  acts_as_csv
+end
+
+lambda do
+  csv = RubyCsv.new(["one", "two"], [["lions", "tigers"]])
+  csv.each { |row| puts row.one }
+end.()
