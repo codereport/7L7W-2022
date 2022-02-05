@@ -1,5 +1,5 @@
-# Day 1
-
+puts "# Day 1"
+# Quickies
 puts "Hello, world"
 puts "Hello, Ruby" =~ /Ruby/
 10.times { puts "Tom" }
@@ -21,3 +21,24 @@ lambda do
   end
   puts "Right on"
 end # .() # uncomment to run
+
+puts
+puts "# Day 2"
+# Eaches
+lambda do
+  vals = (1..16).to_a
+  ncols = 4
+  # Each
+  vals.each.with_index do |val, i|
+    print val
+    print case
+      when (i + 1) % ncols == 0 then "\n"
+      else " "
+    end
+  end
+  # Each slice
+  vals.each_slice(ncols) do |vals|
+    # TODO Better to iterate?
+    puts vals.join(" ")
+  end
+end.()
