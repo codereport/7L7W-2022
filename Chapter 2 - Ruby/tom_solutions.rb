@@ -24,6 +24,7 @@ lambda do
   puts "Right on"
 end # .() # uncomment to run
 
+
 puts
 puts "# Day 2"
 
@@ -32,10 +33,10 @@ lambda do
   vals = (1..16).to_a
   ncols = 4
   # Each
-  vals.each.with_index do |val, i|
+  vals.each.with_index do |val, index|
     print val
     print case
-      when (i + 1) % ncols == 0 then "\n"
+      when (index + 1) % ncols == 0 then "\n"
       else " "
       end
   end
@@ -63,8 +64,8 @@ class Tree
     children.each { |c| c.visit_all(depth: depth + 1, &block) }
   end
 
-  def visit(depth: 0, &block)
-    block.call(self, depth:)
+  def visit(depth: 0)
+    yield(self, depth:)
   end
 end
 
@@ -76,5 +77,14 @@ lambda do
   tree.visit_all do |node, depth:|
     print "  " * depth
     puts node.node_name
+  end
+end.()
+
+# Grep
+lambda do
+  puts("## Matches")
+  phrase = /visit/
+  File.new(__FILE__).each.with_index do |line, index|
+    puts("#{index + 1}: #{line}") if line =~ phrase
   end
 end.()
