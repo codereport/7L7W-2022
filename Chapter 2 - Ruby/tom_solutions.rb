@@ -84,7 +84,10 @@ end.()
 lambda do
   puts("## Matches")
   phrase = /visit/
-  File.new(__FILE__).each.with_index do |line, index|
-    puts("#{index + 1}: #{line}") if line =~ phrase
+  # Follow reminder from Lesley to close file with block.
+  File.open(__FILE__) do |file|
+    file.each_with_index do |line, index|
+      puts("#{index + 1}: #{line}") if line =~ phrase
+    end
   end
 end.()
