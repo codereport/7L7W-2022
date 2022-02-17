@@ -47,11 +47,16 @@ l := list(1,2,3,4)
 // 5. Write a prototype for a two-dimensional list. The dim(x, y) method should allocate a list of y lists that are x elements long. set(x, y, value) should set a value, and get(x, y) should return that value.
 
 List2D := List clone
-List2D dims = [0,0]
+List2D dims := list(0, 0)
+// TODO
 
 // 6. Bonus: Write a transpose method so that (new_matrix get(y, x)) == matrix get(x, y) on the original list.
 
+// TODO
+
 // 7. Write the matrix to a file, and read a matrix from a file.
+
+// TODO
 
 // 8. Write a program that gives you ten tries to guess a random number from 1–100. If you would like, give a hint of “hotter” or “colder” after the first guess.
 
@@ -63,10 +68,8 @@ Number random := method(self iota anyOne)
 
 Number fakeRandom := method(42)
 
-// Number 
-
 Game := Object clone
-Game play := (
+Game play := method(
     targetValue := 100 fakeRandom
     guessNo := 1
     lastGuess := 0
@@ -89,4 +92,4 @@ Game play := (
     )
 )
 
-
+Game play
