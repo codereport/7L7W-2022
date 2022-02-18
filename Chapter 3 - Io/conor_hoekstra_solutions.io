@@ -46,17 +46,62 @@ l := list(1,2,3,4)
 
 // 5. Write a prototype for a two-dimensional list. The dim(x, y) method should allocate a list of y lists that are x elements long. set(x, y, value) should set a value, and get(x, y) should return that value.
 
-List2D := List clone
-List2D dims := list(0, 0)
-// TODO
+List2D := List clone do(
+    rows ::= 0 // adds setRows slot
+    cols ::= 0 // adds setCols slot
+
+    dim := method(x, y, 
+        rows = x
+        cols = y
+        List2D := List clone
+        for (_, 1, y, List2D append(List clone setSize(x)))
+        copy(List2D) # this is important :/
+    )
+
+    iotaFill := method(
+        val := 1
+        for (i, 0, self rows - 1,
+            for (j, 0, self cols - 1, 
+                self at(i) atPut(j, val)
+                val = val + 1
+            )
+        )
+        self
+    )
+
+    println := method(
+        for (i, 0, self rows - 1,
+            for (j, 0, self cols - 1, 
+                self at(i) at(j) print
+                " " print
+            )
+            "" println
+        )
+    )
+)
+
+matrix := List2D clone dim(3, 3) iotaFill
+matrix println
+// 1 2 3 
+// 4 5 6 
+// 7 8 9 
 
 // 6. Bonus: Write a transpose method so that (new_matrix get(y, x)) == matrix get(x, y) on the original list.
 
-// TODO
+List2D transpose := method(
+    List2D := List clone
+    for (col, 0, self cols - 1, List2D append(self map(row, row at(col))))
+    copy(List2D)
+)
+
+matrix transpose2 println
+// 1 4 7 
+// 2 5 8 
+// 3 6 9 
 
 // 7. Write the matrix to a file, and read a matrix from a file.
 
-// TODO
+// Skip
 
 // 8. Write a program that gives you ten tries to guess a random number from 1–100. If you would like, give a hint of “hotter” or “colder” after the first guess.
 
