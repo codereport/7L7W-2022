@@ -27,6 +27,7 @@ for (i, 1, 10, i fib println)
 
 // 2. How would you change / to return 0 if the denominator is zero?
 
+// TODO
 
 // 3. Write a program to add up all of the numbers in a two-dimensionalarray.
 
