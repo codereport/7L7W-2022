@@ -95,7 +95,7 @@ List2D transpose := method(
     copy(List2D)
 )
 
-matrix transpose2 println
+matrix transpose println
 // 1 4 7 
 // 2 5 8 
 // 3 6 9 
