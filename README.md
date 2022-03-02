@@ -19,3 +19,4 @@ This is the material (code and presentation slide decks) that correspond to the 
 |:-:|:-:|
 |Ruby|[www.ruby-lang.org](https://www.ruby-lang.org/en/)|
 |Io|[iolanguage.org](https://iolanguage.org/)|
+|Prolog|[www.swi-prolog.org](https://www.swi-prolog.org/)|
