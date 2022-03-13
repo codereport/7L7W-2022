@@ -5,13 +5,13 @@
 // io conor_hoekstra_solutions.io
 
 // Conor says
-// APL is my favorite language!
+// BQN is my favorite language!
 
 // 2. Execute the code in a slot given its name
 
 Person := Object clone
 conor := Person clone
-conor speak := method("APL is my favorite language!" println)
+conor speak := method("BQN is my favorite language!" println)
 "Conor says" println 
 conor speak
 
