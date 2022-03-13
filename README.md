@@ -12,3 +12,11 @@ This is the material (code and presentation slide decks) that correspond to the 
 |:-:|:-:|:-:|:-:|
 |LoneStarRuby Conf|Bruce Tate|2010| [Seven Languages in Seven Weeks](https://www.youtube.com/watch?v=jBoU1JpFVIg)|
 |Functional Conf|Bruce Tate|2019|[Joy - Maintaining Passion for Programming](https://www.youtube.com/watch?v=rDLq9hFRWBw)|
+
+### Programming Language Resources
+
+|Language|Site|
+|:-:|:-:|
+|Ruby|[www.ruby-lang.org](https://www.ruby-lang.org/en/)|
+|Io|[iolanguage.org](https://iolanguage.org/)|
+|Prolog|[www.swi-prolog.org](https://www.swi-prolog.org/)|
