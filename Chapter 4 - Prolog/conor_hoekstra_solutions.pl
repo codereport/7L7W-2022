@@ -44,19 +44,19 @@ revHelper([H|T], Acc, RevList) :- revHelper(T, [H|Acc], RevList).
 
 % What = [3,2,1]
 % yes
-% | ?- reverse([],What).     
+% | ?- reverse([],What).
 
 % What = []
 % yes
 
-% 2. Find minimum 
+% 2. Find minimum
 
 minimum([H|T], Min) :- minimumHelper(T, H, Min).
 minimumHelper([], Acc, Acc).
-minimumHelper([H|T], Acc, Min) :- (H <  Acc, minimumHelper(T, H,   Min); 
+minimumHelper([H|T], Acc, Min) :- (H <  Acc, minimumHelper(T, H,   Min);
                                    H >= Acc, minimumHelper(T, Acc, Min)).
 
-% | ?- minimum([1,2,3], What).         
+% | ?- minimum([1,2,3], What).
 
 % What = 1
 % yes
@@ -66,6 +66,38 @@ minimumHelper([H|T], Acc, Min) :- (H <  Acc, minimumHelper(T, H,   Min);
 % What = 42 ? ;
 % no
 
-% 3. Sort 
+% 3. Sort
 
-% TODO
+isSorted([]).
+isSorted([_]).
+isSorted([X,Y|T]) :-
+    X=<Y,
+    isSorted([Y|T]).
+
+mySort(List, SortedList) :-
+    permutation(List, SortedList),
+    isSorted(SortedList).
+
+% | ?- mySort([2,1], What).
+% What = [1,2] ? ;
+% no
+
+% | ?- mySort([3,2,1], What).
+% What = [1,2,3] ? ;
+% no
+
+% | ?- mySort([3,2,1,3], What).
+% What = [1,2,3,3] ? ;
+% What = [1,2,3,3] ? ;
+% no
+
+% | ?- mySort([5,4,7,8,10,2,4,1,3], What).
+% What = [1,2,3,4,4,5,7,8,10] ? ;
+% What = [1,2,3,4,4,5,7,8,10] ? ;
+% (167 ms) no
+
+% Day 3
+
+% 9x9 sudoku
+
+% No thanks.
