@@ -19,5 +19,5 @@ This is the material (code and presentation slide decks) that correspond to the 
 |:-:|:-:|
 |Ruby|[www.ruby-lang.org](https://www.ruby-lang.org/en/)|
 |Io|[iolanguage.org](https://iolanguage.org/)|
-|Prolog| [http://www.gprolog.org/](http://www.gprolog.org/) \| [www.swi-prolog.org](https://www.swi-prolog.org/)|
-|Scala|[https://www.scala-lang.org/](https://www.scala-lang.org/)|
+|Prolog|[www.gprolog.org/](http://www.gprolog.org/) \| [www.swi-prolog.org](https://www.swi-prolog.org/)|
+|Scala|[www.scala-lang.org/](https://www.scala-lang.org/)|
