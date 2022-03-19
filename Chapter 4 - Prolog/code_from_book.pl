@@ -7,13 +7,12 @@ likes(wendolene, sheep).
 friend(X, Y) :- \+(X = Y), likes(X, Z), likes(Y, Z).
 
 % | ?- likes(wallace,sheep).
-
 % no
+
 % | ?- likes(grommit,cheese).
-
 % yes
-% | ?- friend(wallace,wallace).
 
+% | ?- friend(wallace,wallace).
 % no
 
 food_type(velveeta, cheese).
@@ -33,9 +32,7 @@ food_flavor(X, Y) :- food_type(X, Z), flavor(Y, Z).
 % | ?- food_type(What,meat).
 
 % What = spam ? ;
-
 % What = sausage ? ;
-
 % no
 
 different(red, green). different(red, blue).
@@ -120,7 +117,6 @@ valid([Head | Tail]) :- fd_all_different(Head), valid(Tail).
 %              Solution).
 
 % Solution = [4,1,2,3,2,3,4,1,1,2,3,4,3,4,1,2]
-
 % yes
 
 valid_queen((Row, Col)) :-
