@@ -29,7 +29,7 @@ flavor(sweet, soda).
 
 food_flavor(X, Y) :- food_type(X, Z), flavor(Y, Z).
 
-% | ?- food_type(What,meat).
+% | ?- food_type(What, meat).
 
 % What = spam ? ;
 % What = sausage ? ;
