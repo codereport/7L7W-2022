@@ -71,7 +71,7 @@ minimumHelper([H|T], Acc, Min) :- (H <  Acc, minimumHelper(T, H,   Min);
 isSorted([]).
 isSorted([_]).
 isSorted([X,Y|T]) :-
-    X=<Y,
+    X =< Y,
     isSorted([Y|T]).
 
 mySort(List, SortedList) :-
