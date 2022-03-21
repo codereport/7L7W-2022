@@ -154,3 +154,45 @@ valid([Head | Tail]) :- fd_all_different(Head), valid(Tail).
 
 % What = [1,5,6,2,3,4,2,3,4,1,6,5,4,2,1,3,5,6,5,6,3,4,2,1,6,1,2,5,4,3,3,4,5,6,1,2]
 % yes
+
+% Solve the Eight Queens problem by taking a list of queens
+% Rather than a tuple, represent each queen as an integer from 1 to 8
+% Get the row of a queen by its position in the list
+% Get the column of a queen by its value in the list
+
+valid_queen(Col) :- member(Col, [1,2,3,4,5,6,7,8]).
+
+valid_board([]).
+valid_board([Head|Tail]) :- valid_queen(Head), valid_board(Tail).
+
+diags1(_, [], []).
+diags1(Row, [Col|QueensTail], [Diagonal|DiagonalsTail]) :-
+    Diagonal is Col - Row,
+    diags1(Row + 1, QueensTail, DiagonalsTail).
+
+diags2(_, [], []).
+diags2(Row, [Col|QueensTail], [Diagonal|DiagonalsTail]) :-
+    Diagonal is Col + Row,
+    diags2(Row + 1, QueensTail, DiagonalsTail).
+
+eight_queens(Board) :-
+    length(Board, 8),
+    valid_board(Board),
+
+    diags1(1, Board, Diags1),
+    diags2(1, Board, Diags2),
+
+    fd_all_different(Board),
+    fd_all_different(Diags1),
+    fd_all_different(Diags2).
+
+% | ?- eight_queens([A,B,C,D,E,F,G,H]).
+
+% A = 1
+% B = 5
+% C = 8
+% D = 6
+% E = 3
+% F = 7
+% G = 2
+% H = 4 ?
