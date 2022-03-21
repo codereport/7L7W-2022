@@ -1,0 +1,24 @@
+%
+% Day 1
+%
+
+?- [halloleo_books_kb].
+true.
+
+?- book(Title, 'Christian, Brian', Rating, DateRead).
+Title = 'Algorithms to Live By: The Computer Science of Human Decisions',
+Rating = star4,
+DateRead = date2020_02_08.
+
+%
+% Day 2
+%
+
+?- [halloleo_list_stuff].
+true.
+
+?- rev(['I', 'like', '7L7W'], RevList).
+RevList = ['7L7W', like, 'I']
+
+?- minOfList([18,7,993],Smallest).
+Smallest = 7
