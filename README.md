@@ -21,3 +21,4 @@ This is the material (code and presentation slide decks) that correspond to the 
 |Io|[iolanguage.org](https://iolanguage.org/)|
 |Prolog|[www.gprolog.org/](http://www.gprolog.org/) \| [www.swi-prolog.org](https://www.swi-prolog.org/)|
 |Scala|[www.scala-lang.org](https://www.scala-lang.org/)|
+|Erlang|[www.erlang.org](https://www.erlang.org)|
