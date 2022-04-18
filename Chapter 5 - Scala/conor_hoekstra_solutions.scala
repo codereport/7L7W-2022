@@ -42,18 +42,50 @@ object Day2 {
 
 }
 
+object Day3 {
+
+    // didn't actually do day 3, decided to solve a LeetCode problem
+    // https://leetcode.com/contest/biweekly-contest-76/problems/find-closest-number-to-zero/
+
+    // Bad: ITM
+    def findClosestNumber_(nums: Array[Int]): Int = {
+        var res = nums(0)
+        for (num <- nums) {
+            if ((num.abs < res.abs) || 
+                (num.abs == res.abs && num > res)) {
+                res = num
+            }
+        }
+        return res
+    }
+
+    // Good :)
+    def findClosestNumber(nums: Array[Int]): Int = {
+        val lo = nums.map { _.abs }.min
+        return nums.filter { _.abs == lo }.max
+    }
+
+}
+
 object Scala {
 
     def main(args: Array[String]) = {
 
+        // Day 1
         println(Day1.tic_tac_toe_status("XOX...XOX"))
         println(Day1.tic_tac_toe_status("XOX.O.XOX"))
         println(Day1.tic_tac_toe_status("XOX..0XOX"))
         println(Day1.tic_tac_toe_status("XOXX..XOX"))
 
+        // Day 2
         println(Day2.total_size_of_strings(List("cat", "dog", "mouse")))
         
         val s = new Sentence(List("shoot", "darn", "this", "is", "weird"))
         s.clean.words.foreach { w => println(w) }
+
+        // Day 3
+        println(Day3.findClosestNumber(Array(-4,-2,1,4,8)))
+        println(Day3.findClosestNumber(Array(2,-1,1)))
+        println(Day3.findClosestNumber(Array(2,-1)))
     }
 }

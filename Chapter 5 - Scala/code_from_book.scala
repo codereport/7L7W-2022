@@ -92,4 +92,11 @@ res4: Int = 8
 
 // Day 3 
 
-// TODO
+scala> val langs = List("apl", "bqn", "j", "k", "q")
+langs: List[String] = List(apl, bqn, j, k, q)
+
+scala> val hasQ = """.*q.*""".r
+hasQ: scala.util.matching.Regex = .*q.*
+
+scala> langs.map { hasQ.findFirstIn(_) }
+res0: List[Option[String]] = List(None, Some(bqn), None, None, Some(q))
