@@ -12,8 +12,7 @@ object Day1 {
                             Array(0,3,6), Array(1,4,7), Array(2,5,8), // columns
                             Array(0,4,8), Array(2,4,6))               // diagonals
         
-        return any(indices.map { is => all_equal(is.collect(board), xo) })
-                      
+        return any(indices.map { is => all_equal(is.collect(board), xo) })       
     }
 
     def tic_tac_toe_status(board: String) : String = {
