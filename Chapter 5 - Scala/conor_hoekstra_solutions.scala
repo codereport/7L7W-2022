@@ -4,16 +4,15 @@ object Day1 {
     def any(arr : Array[Boolean]) : Boolean = 
         arr.fold(false) { _ || _ }
 
-    def all_equal(arr : Array[Char], xo: Char) : Boolean =
-        arr.map { e => e == xo }.fold(true) { _ && _ }
+    def all_equal_to(arr : Array[Char], xo: Char) : Boolean =
+        arr.map { _ == xo }.fold(true) { _ && _ }
 
     def winner(board: String, xo: Char) : Boolean = {
         val indices = Array(Array(0,1,2), Array(3,4,5), Array(6,7,8), // rows
                             Array(0,3,6), Array(1,4,7), Array(2,5,8), // columns
                             Array(0,4,8), Array(2,4,6))               // diagonals
         
-        return any(indices.map { is => all_equal(is.collect(board), xo) })
-                      
+        return any(indices.map { is => all_equal_to(is.collect(board), xo) })              
     }
 
     def tic_tac_toe_status(board: String) : String = {
