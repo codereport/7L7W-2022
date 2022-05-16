@@ -103,7 +103,7 @@ iota_helper(N, L) -> iota_helper(N-1, [N|L]).
 chunk(List, N) -> 
     ChunkSize = ceil(length(List) / N),
     Starts = [ (X - 1) * ChunkSize + 1 || X <- lists:seq(1,N) ],
-     [ lists:sublist(List, Start, ChunkSize) || Start <- Starts].
+    [ lists:sublist(List, Start, ChunkSize) || Start <- Starts].
 
 % lol
 
@@ -115,13 +115,13 @@ chunk(List, N) ->
 %  "QRSTUVWXYZ[\\]^_`abcd"]
 
 
-parallel_sum(List) ->
-    Ls = [ spawn(fun hw:listener/0) || _ <- iota(10) ],
-    sum(lists:zipwith(fun hw:queuer/2, Ls, chunk(List, 10))).
+parallel_sum(List, N) ->
+    Ls = [ spawn(fun hw:listener/0) || _ <- iota(N) ],
+    sum(lists:zipwith(fun hw:queuer/2, Ls, chunk(List, N))).
 
 % Test
 
-% 14> hw:parallel_sum(hw:iota(1000)).
+% 14> hw:parallel_sum(hw:iota(1000), 10).
 % Summing on process id: <0.190.0>
 % Summing on process id: <0.191.0>
 % Summing on process id: <0.192.0>
