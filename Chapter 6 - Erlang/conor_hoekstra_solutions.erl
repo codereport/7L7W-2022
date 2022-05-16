@@ -2,7 +2,7 @@
 -module(hw).
 -export([count_to_ten/0]).
 -export([count_words/1]).
--export([sum/1, listener/0, queuer/2, parallel_sum/1, iota/1, chunk/2]).
+-export([sum/1, listener/0, queuer/2, parallel_sum/2, iota/1, chunk/2]).
 
 % Day 1
 
@@ -52,7 +52,7 @@ count_to_ten() -> count_to(0, 10).
 % Write a function that accepts the list and a keyword and returns 
 % the associated value for the keyword.
 
-KeywordValue = fun(KV, K) -> [ Value || {Key, Value} <- KV, Key == K ] end.
+% KeywordValue = fun(KV, K) -> [ Value || {Key, Value} <- KV, Key == K ] end.
 
 % Tests
 
@@ -65,7 +65,7 @@ KeywordValue = fun(KV, K) -> [ Value || {Key, Value} <- KV, Key == K ] end.
 % Write a list comprehension that builds a list of items of the form 
 % [{item total_price}, ...] , where total_price is quantity times price.
 
-TotalPrices = fun(List) -> [ {I, Q * P} || {I, P, Q} <- List ] end. 
+% TotalPrices = fun(List) -> [ {I, Q * P} || {I, P, Q} <- List ] end. 
 
 % Test
 
@@ -108,7 +108,7 @@ iota_helper(N, L) -> iota_helper(N-1, [N|L]).
 chunk(List, N) -> 
     ChunkSize = ceil(length(List) / N),
     Starts = [ (X - 1) * ChunkSize + 1 || X <- lists:seq(1,N) ],
-    [ lists:sublist(List, Start, ChunkSize) || Start <- Starts].
+    [ lists:sublist(List, Start, ChunkSize) || Start <- Starts ].
 
 % lol
 
@@ -121,8 +121,8 @@ chunk(List, N) ->
 
 
 parallel_sum(List, N) ->
-    Ls = [ spawn(fun hw:listener/0) || _ <- iota(N) ],
-    sum(lists:zipwith(fun hw:queuer/2, Ls, chunk(List, N))).
+    Ls = [ spawn(fun hw:listener/0) || _ <- hw:iota(N) ],
+    sum(lists:zipwith(fun hw:queuer/2, Ls, hw:chunk(List, N))).
 
 % Test
 
