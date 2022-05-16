@@ -47,7 +47,10 @@ count_to_ten() -> count_to(0, 10).
 
 % Day 2
 
-% 1. Consider a list of keyword-value tuples, such as [{erlang, "a functional language"}, {ruby, "an OO language"}] . Write a function that accepts the list and a keyword and returns the associated value for the keyword.
+% 1. Consider a list of keyword-value tuples, such as 
+% [{erlang, "a functional language"}, {ruby, "an OO language"}]. 
+% Write a function that accepts the list and a keyword and returns 
+% the associated value for the keyword.
 
 KeywordValue = fun(KV, K) -> [ Value || {Key, Value} <- KV, Key == K ] end.
 
@@ -58,7 +61,9 @@ KeywordValue = fun(KV, K) -> [ Value || {Key, Value} <- KV, Key == K ] end.
 % > KeywordValue(List, ruby).  
 % ["an OO language"]
 
-% 2. Consider a shopping list that looks like [{item quantity price}, ...] Write a list comprehension that builds a list of items of the form [{item total_price}, ...] , where total_price is quantity times price .
+% 2. Consider a shopping list that looks like [{item quantity price}, ...]
+% Write a list comprehension that builds a list of items of the form 
+% [{item total_price}, ...] , where total_price is quantity times price.
 
 TotalPrices = fun(List) -> [ {I, Q * P} || {I, P, Q} <- List ] end. 
 
