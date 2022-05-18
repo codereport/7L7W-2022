@@ -23,4 +23,4 @@ This is the material (code and presentation slide decks) that correspond to the 
 |Scala|[www.scala-lang.org](https://www.scala-lang.org/)|
 |Erlang|[www.erlang.org](https://www.erlang.org)|
 |Clojure|[clojure.org](https://clojure.org/) \| [clojuredocs.org](https://clojuredocs.org/)|
-|Haskell|[www.haskell.org](https://www.haskell.org/)\| [hoogle.haskell.org](https://hoogle.haskell.org/)|
+|Haskell|[www.haskell.org](https://www.haskell.org/) \| [hoogle.haskell.org](https://hoogle.haskell.org/)|
