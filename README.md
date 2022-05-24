@@ -22,3 +22,5 @@ This is the material (code and presentation slide decks) that correspond to the 
 |Prolog|[www.gprolog.org/](http://www.gprolog.org/) \| [www.swi-prolog.org](https://www.swi-prolog.org/)|
 |Scala|[www.scala-lang.org](https://www.scala-lang.org/)|
 |Erlang|[www.erlang.org](https://www.erlang.org)|
+|Clojure|[clojure.org](https://clojure.org/) \| [clojuredocs.org](https://clojuredocs.org/)|
+|Haskell|[www.haskell.org](https://www.haskell.org/) \| [hoogle.haskell.org](https://hoogle.haskell.org/)|
