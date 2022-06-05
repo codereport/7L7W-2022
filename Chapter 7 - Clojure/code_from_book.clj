@@ -99,3 +99,14 @@ false
 Could not resolve symbol: abs
 =>(sort-by #(if (< 0 %) (- %) %) [-1 -4 3 2])
 (-4 3 2 -1)
+
+=>(range 1 10)
+(1 2 3 4 5 6 7 8 9)
+=>(range 1 10 3)
+(1 4 7)
+=>(range 10)
+(0 1 2 3 4 5 6 7 8 9)
+=>(take 3 (repeat 42))
+(42 42 42)
+=>(take 5 (cycle [1 2 3]))
+(1 2 3 1 2)

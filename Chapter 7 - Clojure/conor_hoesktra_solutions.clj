@@ -1,4 +1,5 @@
 ;; Using https://www.jdoodle.com/execute-clojure-online/
+;; Using https://www.mycompiler.io/new/clojure
 
 ;; Day 1
 
