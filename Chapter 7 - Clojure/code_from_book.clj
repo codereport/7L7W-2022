@@ -88,3 +88,14 @@ true
 true
 =>(not-any?   odd? '(1 2 3))
 false
+
+=>(reduce + [1 2 3])
+6
+=>(reduce * [1 2 3])
+6
+=>(reduce * [1 2 3 4])
+24
+=>(sort-by abs [-1 -4 3 2])
+Could not resolve symbol: abs
+=>(sort-by #(if (< 0 %) (- %) %) [-1 -4 3 2])
+(-4 3 2 -1)

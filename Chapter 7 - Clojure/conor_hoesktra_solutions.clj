@@ -31,8 +31,39 @@
 
 ;; Day 2
 
-;; TODO 
+;; Implement an unless with an else condition using macros.
+
+;; From SICP: (if ⟨predicate⟩ ⟨consequent⟩ ⟨alternative⟩)
+
+(defmacro unless [pred consequent alternative]
+    (list 'if (list 'not pred) consequent alternative))
+
+(println (unless (odd? 1) "Hello" "Goodbye")) ; Goodbye
+(println (unless (odd? 2) "Hello" "Goodbye")) ; Hello
+
+;; Write a type using defrecord that implements a protocol.
+
+(defprotocol Animal
+    (speak [animal])
+    (legs  [animal])
+    (tail  [animal]))
+
+(defrecord Cat [name] Animal
+    (speak [this] "meow!")
+    (legs  [this] 4)
+    (tail  [this] true))
+
+(defrecord Duck [name] Animal
+    (speak [this] "quack!")
+    (legs  [this] 2)
+    (tail  [this] false))
+
+(def c (Cat.  "Fluffy"))
+(def d (Duck. "Donald"))
+
+(println (str (.name c) " says " (speak c))) ; Fluffy says meow!
+(println (str (.name d) " says " (speak d))) ; Donald says quack!
 
 ;; Day 3
 
-;; TODO 
+;; Skip
