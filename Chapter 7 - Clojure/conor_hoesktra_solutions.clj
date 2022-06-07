@@ -7,7 +7,7 @@
 ;; if a string st is longer than n characters.
 
 (defn big [st n] 
-   (if (> (count st) n) true false))
+   (> (count st) n))
 
 ;; Tests
 (println (big "APL" 2)) ; true
