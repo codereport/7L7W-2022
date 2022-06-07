@@ -1,0 +1,22 @@
+### Links
+
+* https://youtu.be/YR5WdGrpoug
+* https://clojuredocs.org/clojure.core/condp
+* https://clojuredocs.org/clojure.core/some_q
+* https://clojuredocs.org/clojure.core/some
+* https://www.amazon.com/Seven-Concurrency-Models-Weeks-Programmers/dp/1937785653
+* https://clojure.org/news/2013/06/28/clojure-clore-async-channels
+* https://journal.stuffwithstuff.com/2015/02/01/what-color-is-your-function/
+* http://james-iry.blogspot.com/2009/05/brief-incomplete-and-mostly-wrong.html
+* https://xkcd.com/297/
+* https://www.youtube.com/watch?v=UURvPeczxJI
+* https://xkcd.com/297/
+* https://github.com/vector-of-bool/dds
+* https://cpp.chat/74/
+* https://repo-1.dds.pizza/
+* https://github.com/cortexlib/box
+* https://www.youtube.com/c/DyalogUsermeeting/videos
+* https://www.youtube.com/watch?v=czWC4tjwzOQ
+* https://aplwiki.com/wiki/Tacit_programming#Trains
+* https://help.dyalog.com/18.2/
+* https://aplcart.info/
