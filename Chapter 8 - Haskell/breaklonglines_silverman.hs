@@ -11,7 +11,7 @@ data Quad = QLeft | QRight | QFull
 
 main :: IO ()
 main = do
-    let lineWidth = 50
+    let lineWidth = 30
     print "Left Justify"
     breakLines "cantebury.txt" QLeft lineWidth
     print ""
@@ -55,7 +55,7 @@ justify quad width xs =
                     let w2 = drop (r+1) ws
                     case r of
                         0 -> return (intercalate (nSpaces (1+d)) ws)
-                        _ -> return ((intercalate (nSpaces (2+d)) w1) ++ " " ++ (intercalate (nSpaces (1+d)) w2))
+                        _ -> return ((intercalate (nSpaces (2+d)) w1) ++ (nSpaces (d+1)) ++ (intercalate (nSpaces (1+d)) w2))
             
 -- "Left Justify"
 -- "1    Whan that Aprille with his shoures soote, The     "
