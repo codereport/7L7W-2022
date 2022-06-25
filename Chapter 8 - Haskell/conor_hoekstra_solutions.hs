@@ -1,10 +1,4 @@
 
-import Control.Monad (join)
-import Data.List.HT (outerProduct)
-import Data.Char (digitToInt)
-import Data.List (partition)
-import Data.Function (on)
-
 -- Day 1
 
 -- 1. How many different ways can you find to write allEven?
@@ -12,8 +6,8 @@ import Data.Function (on)
 allEven = and . map even
 
 -- Tests
--- allEven [2,4,6,8] -- True
--- allEven [1..5]    -- False
+allEven [2,4,6,8] -- True
+allEven [1..5]    -- False
 
 -- 2. Write a function that takes a list and returns the same list in reverse.
 
@@ -22,13 +16,13 @@ reverse_ []    = []
 reverse_ (h:t) = (reverse_ t) ++ [h]
 
 -- Tests
--- reverse_ [1..5] -- [5,4,3,2,1]
+reverse_ [1..5] -- [5,4,3,2,1]
 
 -- 3. Write a function that builds two-tuples with all possible combinations of two of the colors black,
 -- white, blue, yellow, and red. Note that you should include only one of (black, blue) and (blue, black).
 
--- import Control.Monad (join)
--- import Data.List.HT (outerProduct)
+import Control.Monad (join)
+import Data.List.HT (outerProduct)
 
 triangleProduct :: [b] -> [(b, b)]
 triangleProduct = concat
@@ -37,14 +31,14 @@ triangleProduct = concat
 
 colors = ["black","red","yellow","blue"]
 
--- triangleProduct colors -- [("black","red"),  ("black","yellow"),
+triangleProduct colors -- [("black","red"),  ("black","yellow"),
                        --  ("black","blue"), ("red","yellow"),
                        --  ("red","blue"),   ("yellow","blue")]
 
 -- 4. Write a list comprehension to build a childhood multiplication table. The table would be a list of
 -- three-tuples where the first two are integers from 1–12 and the third is the product of the first two.
 
--- join (outerProduct (*)) [1..10]
+join (outerProduct (*)) [1..10]
 -- [[1,2,3,4,5,6,7,8,9,10],
 --  [2,4,6,8,10,12,14,16,18,20],
 --  [3,6,9,12,15,18,21,24,27,30],
@@ -64,8 +58,8 @@ colors = ["black","red","yellow","blue"]
 
 -- 1. Write a sort that takes a list and returns a sorted list.
 
--- import Data.List (partition)
--- import Data.Function (on)
+import Data.List (partition)
+import Data.Function (on)
 
 sort_ []  = []
 sort_ [x] = [x]
@@ -80,7 +74,7 @@ sort_ (x:xs) = concat (map sort_ [l, [x], r])
 -- 3. Write a Haskell function to convert a string to a number. The string should be in the
 -- form of $2,345,678.99 and can possibly have leading zeros.
 
--- import Data.Char (digitToInt)
+import Data.Char (digitToInt)
 
 stringtoNumber = (/100)
                . fromInteger
