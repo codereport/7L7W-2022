@@ -90,4 +90,45 @@ stringtoNumber = (/100)
 
 everyThird x = map ((x+) . (3*)) [0..]
 everyFifth x = map ((x+) . (5*)) [0..]
--- everyEighth not possible with the above
+
+-- 5. Use a partially applied function to define a function that will return half of a 
+-- number and another that will append \n to the end of any string.
+
+half = (/2)
+addLineEnd = (++"\n")
+
+-- Extra
+
+-- 6. Write a function to determine the greatest common denominator of two integers.
+
+-- Skip
+
+-- 7. Create a lazy sequence of prime numbers.
+
+isPrime x    = (3>) . length . filter (==0) . map (mod x) $ [1..x]
+firstNPrimes = flip take (filter isPrime [1..])
+firstNPrimes 10 -- [1,2,3,5,7,11,13,17,19,23]
+
+-- 8. Break a long string into individual lines at proper word boundaries.
+
+paragraph = "I like APL. It was\n created by Ken\nIverson."
+
+lines = splitOn "\n"
+
+lines paragraph
+-- ["I like APL. It was"," created by Ken","Iverson."]
+
+-- 10. Add line numbers to the previous exercise.
+
+numberedLines = zip [1..] . lines
+-- [(1,"I like APL. It was"),(2," created by Ken"),(3,"Iverson.")]
+
+numberedLines = zipWith (\i l -> (show i) ++ " " ++ l) [1..] . lines
+-- ["1 I like APL. It was","2  created by Ken","3 Iverson."]
+
+-- 11. To the above exercise, add functions to left, right, and fully justify
+-- the text with spaces (making both margins straight).
+
+-- Skip
+
+-- Day 3
