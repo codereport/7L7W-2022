@@ -1,7 +1,8 @@
 
 -- Day 1
 
--- 1. How many different ways can you find to write allEven?
+-- 1. How many different ways can 
+-- you find to write allEven?
 
 allEven = and . map even
 
@@ -9,7 +10,8 @@ allEven = and . map even
 allEven [2,4,6,8] -- True
 allEven [1..5]    -- False
 
--- 2. Write a function that takes a list and returns the same list in reverse.
+-- 2. Write a function that takes a list and 
+-- returns the same list in reverse.
 
 reverse_ :: [a] -> [a]
 reverse_ []    = []
