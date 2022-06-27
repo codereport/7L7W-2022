@@ -75,3 +75,17 @@ second :: [a] -> a
 -- Day 2
 
 -- Day 3
+
+*Main> data ArrayLang = APL | BQN | J | K | Q | SaC | Futhark | Nial deriving (Show)
+data ArrayLang = ...
+*Main> :t APL
+APL :: ArrayLang
+*Main> APL
+APL
+it :: ArrayLang
+*Main> J
+J
+it :: ArrayLang
+*Main> Q
+Q
+it :: ArrayLang

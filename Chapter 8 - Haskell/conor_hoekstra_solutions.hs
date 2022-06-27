@@ -91,7 +91,7 @@ stringtoNumber = (/100)
 everyThird x = map ((x+) . (3*)) [0..]
 everyFifth x = map ((x+) . (5*)) [0..]
 
--- 5. Use a partially applied function to define a function that will return half of a 
+-- 5. Use a partially applied function to define a function that will return half of a
 -- number and another that will append \n to the end of any string.
 
 half = (/2)
@@ -110,6 +110,8 @@ firstNPrimes = flip take (filter isPrime [1..])
 firstNPrimes 10 -- [1,2,3,5,7,11,13,17,19,23]
 
 -- 8. Break a long string into individual lines at proper word boundaries.
+
+import Data.List.Split (splitOn)
 
 paragraph = "I like APL. It was\n created by Ken\nIverson."
 
@@ -132,3 +134,32 @@ numberedLines = zipWith (\i l -> (show i) ++ " " ++ l) [1..] . lines
 -- Skip
 
 -- Day 3
+
+-- 1. Write a function that looks up a hash table value that uses the Maybe monad.
+-- Write a hash that stores other hashes, several levels deep. Use the Maybe monad
+-- to retrieve an element for a hash key several levels deep.
+
+fakeHashMap = zip [1..] ['a'..'z']
+
+findValue :: (Eq a) => a -> [(a, b)] -> Maybe b
+findValue key hashMap
+    | null kv   = Nothing
+    | otherwise = Just (snd (head kv))
+       where kv = filter ((key==) . fst) hashMap
+
+findValue 10 fakeHashMap -- Just 'j'
+findValue 30 fakeHashMap -- Nothing
+
+-- 2. Represent a maze in Haskell. You’ll need a Maze type and a Node type, as well
+-- as a function to return a node given its coordinates. The node should have a
+-- list of exits to other nodes.
+
+-- Skip
+
+-- 3. Use a List monad to solve the maze.
+
+-- Skip
+
+-- 4. Implement a Monad in a nonfunctional language. (See the article series on monads in Ruby 5)
+
+-- Skip
