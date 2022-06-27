@@ -70,7 +70,6 @@ join (outerProduct (phi1 (,) (,) (*))) [1..5]
 -- 1. Write a sort that takes a list and returns a sorted list.
 
 import Data.List (partition)
-import Data.Function (on)
 
 sort_ []  = []
 sort_ [x] = [x]
