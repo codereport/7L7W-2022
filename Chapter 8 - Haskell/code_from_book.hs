@@ -61,7 +61,7 @@ Prelude> import Control.Monad
 Prelude Control.Monad> let double2 = join (+)
 double2 :: Num a => a -> a
 
--- double 2 ways
+-- double 3 ways
 
 double x = 2 * x
 double   = (2*)
