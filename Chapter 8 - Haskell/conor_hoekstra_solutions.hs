@@ -20,8 +20,8 @@ reverse_ (h:t) = (reverse_ t) ++ [h]
 -- Tests
 reverse_ [1..5] -- [5,4,3,2,1]
 
--- 3. Write a function that builds two-tuples with all possible combinations of two of the colors black,
--- white, blue, yellow, and red. Note that you should include only one of (black, blue) and (blue, black).
+-- 3. Write a function that builds two-tuples with all possible combinations 
+-- of two of the colors black, white, blue, yellow, and red. 
 
 import Control.Monad (join)
 import Data.List.HT (outerProduct)
@@ -37,8 +37,9 @@ triangleProduct colors -- [("black","red"),  ("black","yellow"),
                        --  ("black","blue"), ("red","yellow"),
                        --  ("red","blue"),   ("yellow","blue")]
 
--- 4. Write a list comprehension to build a childhood multiplication table. The table would be a list of
--- three-tuples where the first two are integers from 1–12 and the third is the product of the first two.
+-- 4. Write a list comprehension to build a childhood multiplication table. 
+-- The table would be a list of three-tuples where the first two are integers 
+-- from 1–12 and the third is the product of the first two.
 
 join (outerProduct (*)) [1..10]
 -- [[1,2,3,4,5,6,7,8,9,10],
@@ -51,6 +52,14 @@ join (outerProduct (*)) [1..10]
 --  [8,16,24,32,40,48,56,64,72,80],
 --  [9,18,27,36,45,54,63,72,81,90],
 --  [10,20,30,40,50,60,70,80,90,100]]
+
+phi1 a b c x y = b (a x y) (c x y)
+join (outerProduct (phi1 (,) (,) (*))) [1..5]
+-- [[((1,1),1),((1,2),2),((1,3),3),((1,4),4),((1,5),5)],
+-- [((2,1),2),((2,2),4),((2,3),6),((2,4),8),((2,5),10)],
+-- [((3,1),3),((3,2),6),((3,3),9),((3,4),12),((3,5),15)],
+-- [((4,1),4),((4,2),8),((4,3),12),((4,4),16),((4,5),20)],
+-- [((5,1),5),((5,2),10),((5,3),15),((5,4),20),((5,5),25)]]
 
 -- 5. Solve the map-coloring problem (Section 4.2, Map Coloring, on page 101) using Haskell.
 
@@ -73,8 +82,9 @@ sort_ (x:xs) = concat (map sort_ [l, [x], r])
 
 -- Skip
 
--- 3. Write a Haskell function to convert a string to a number. The string should be in the
--- form of $2,345,678.99 and can possibly have leading zeros.
+-- 3. Write a Haskell function to convert a string to a 
+-- number. The string should be in the form of 
+-- $2,345,678.99 and can possibly have leading zeros.
 
 import Data.Char (digitToInt)
 
